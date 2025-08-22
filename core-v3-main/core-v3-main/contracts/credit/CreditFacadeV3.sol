@@ -393,9 +393,11 @@ contract CreditFacadeV3 is ICreditFacadeV3, ACLNonReentrantTrait {
             creditAccount: creditAccount
         });
 
+        // SECURITY FIX: Enforce user consent for ALL bots, including special permission bots
+        // This prevents the critical vulnerability where special permissions bypass user consent
         if (
             botPermissions == 0 || forbidden
-                || (!hasSpecialPermissions && (_flagsOf(creditAccount) & BOT_PERMISSIONS_SET_FLAG == 0))
+                || (_flagsOf(creditAccount) & BOT_PERMISSIONS_SET_FLAG == 0)
         ) {
             revert NotApprovedBotException(); // U:[FA-19]
         }

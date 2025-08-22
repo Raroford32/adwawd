@@ -20,7 +20,6 @@
   },
   "license": "BUSL-1.1",
   "scripts": {
-    "prepare": "husky install",
     "prettier": "forge fmt",
     "prettier:ci": "forge fmt",
     "forge-install": "forge install --no-commit foundry-rs/forge-std"
