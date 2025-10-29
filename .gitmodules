@@ -1,0 +1,3 @@
+[submodule "core-v3-main/core-v3-main/lib/forge-std"]
+	path = core-v3-main/core-v3-main/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
